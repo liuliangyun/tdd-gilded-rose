@@ -62,4 +62,14 @@ public class ProductControllerTest implements WithAssertions {
         backstagePass = productController.changeSellInAndQuality(backstagePass);
         assertThat(backstagePass).matches(p -> p.getSellIn() == 14 && p.getQuality() == 11);
     }
+
+    @Test
+    public void BackstagePassQualityShouldIncreaseOnDoubleSpeedWhenSellInLessThanOrEqualTo10() {
+        Product backstagePass = new Product("Backstage pass");
+        backstagePass.setSellIn(10);
+        backstagePass.setQuality(10);
+
+        backstagePass = productController.changeSellInAndQuality(backstagePass);
+        assertThat(backstagePass).matches(p -> p.getSellIn() == 9 && p.getQuality() == 12);
+    }
 }
