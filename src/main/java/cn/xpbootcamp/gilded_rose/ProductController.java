@@ -1,9 +1,11 @@
 package cn.xpbootcamp.gilded_rose;
 
+import static java.util.Objects.isNull;
+
 public class ProductController {
 
     public Product changeSellInAndQuality(Product product) {
-        if (product.getName().equals("Sulfuras")) {
+        if (isNull(product) || product.getName().equals("Sulfuras")) {
             return product;
         }
 
