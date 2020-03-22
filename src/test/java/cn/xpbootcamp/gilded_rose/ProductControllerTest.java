@@ -82,4 +82,14 @@ public class ProductControllerTest implements WithAssertions {
         backstagePass = productController.changeSellInAndQuality(backstagePass);
         assertThat(backstagePass).matches(p -> p.getSellIn() == 4 && p.getQuality() == 13);
     }
+
+    @Test
+    public void BackstagePassQualityShouldBe0WhenSellInLessThanOrEqualTo0() {
+        Product backstagePass = new Product("Backstage pass");
+        backstagePass.setSellIn(0);
+        backstagePass.setQuality(10);
+
+        backstagePass = productController.changeSellInAndQuality(backstagePass);
+        assertThat(backstagePass).matches(p -> p.getSellIn() == -1 && p.getQuality() == 0);
+    }
 }
