@@ -11,8 +11,16 @@ public class ProductController {
 
         int sellIn = product.getSellIn();
         int quality = product.getQuality();
-        if (product.getName().equals("Aged Brie") || product.getName().equals("Backstage pass")) {
+        if (product.getName().equals("Aged Brie")) {
             quality = quality + rate;
+        }
+        else if (product.getName().equals("Backstage pass")) {
+            if (sellIn > 10) {
+                quality = quality + rate;
+            }
+            else {
+                quality = quality + rate * 2;
+            }
         }
         else if (sellIn > 0) {
             quality = quality - rate;
