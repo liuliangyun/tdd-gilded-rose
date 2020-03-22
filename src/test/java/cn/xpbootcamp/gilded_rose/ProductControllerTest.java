@@ -33,4 +33,13 @@ public class ProductControllerTest implements WithAssertions {
         assertThat(product).matches(p -> p.getSellIn() == -1 && p.getQuality() == 8);
     }
 
+    @Test
+    public void qualityShouldIncreaseWhenProductIsAgedBrie() {
+        Product agedBrie = new Product("Aged Brie");
+        agedBrie.setSellIn(7);
+        agedBrie.setQuality(10);
+
+        agedBrie = productController.decreaseSellInAndQuality(agedBrie);
+        assertThat(agedBrie).matches(p -> p.getSellIn() == 6 && p.getQuality() == 11);
+    }
 }
