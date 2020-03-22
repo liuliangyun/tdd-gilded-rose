@@ -4,6 +4,7 @@ public class Product {
 
     private String name;
     private int quality;
+    private int sellIn;
 
     public Product(String name) {
         this.name = name;
@@ -25,5 +26,13 @@ public class Product {
         if (quality >= 0 && quality <= 50) {
             this.quality = quality;
         }
+    }
+
+    public int getSellIn() {
+        return sellIn;
+    }
+
+    public void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
     }
 }
