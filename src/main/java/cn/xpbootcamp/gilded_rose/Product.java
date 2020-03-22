@@ -1,12 +1,16 @@
 package cn.xpbootcamp.gilded_rose;
 
-public class Product {
+public enum  Product {
+    NORMAL_PRODUCT("Normal product"),
+    AGED_BRIE("Aged Brie"),
+    SULFURAS("Sulfuras"),
+    BACKSTAGE_PASS("Backstage pass");
 
     private String name;
     private int quality;
     private int sellIn;
 
-    public Product(String name) {
+    Product(String name) {
         this.name = name;
     }
 

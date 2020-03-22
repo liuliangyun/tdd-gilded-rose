@@ -11,7 +11,8 @@ public class ProductTest implements WithAssertions {
 
     @BeforeEach
     void setUp() {
-        product = new Product("mock product");
+        product = Product.NORMAL_PRODUCT;
+        product.setQuality(10);
     }
 
     @Test
@@ -23,13 +24,13 @@ public class ProductTest implements WithAssertions {
     @Test
     public void qualityShouldNotSetWhenLessThan0() {
         product.setQuality(-1);
-        assertThat(product.getQuality()).isEqualTo(0);
+        assertThat(product.getQuality()).isEqualTo(10);
     }
 
     @Test
     public void qualityShouldNotSetWhenGreaterThan50() {
         product.setQuality(51);
-        assertThat(product.getQuality()).isEqualTo(0);
+        assertThat(product.getQuality()).isEqualTo(10);
     }
 
 }

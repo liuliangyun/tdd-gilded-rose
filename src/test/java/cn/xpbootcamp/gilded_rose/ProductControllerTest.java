@@ -15,7 +15,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void qualityShouldDecrease() {
-        Product product = new Product("mock product");
+        Product product = Product.NORMAL_PRODUCT;
         product.setSellIn(7);
         product.setQuality(10);
 
@@ -25,7 +25,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void qualityShouldDecreaseOnDoubleSpeedWhenSellInLessThanOrEqualTo0() {
-        Product product = new Product("mock product");
+        Product product = Product.NORMAL_PRODUCT;
         product.setSellIn(0);
         product.setQuality(10);
 
@@ -35,7 +35,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void agedBrieQualityShouldIncrease() {
-        Product agedBrie = new Product("Aged Brie");
+        Product agedBrie = Product.AGED_BRIE;
         agedBrie.setSellIn(7);
         agedBrie.setQuality(10);
 
@@ -45,7 +45,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void sulfurasQualityAndSellInShouldNotChange() {
-        Product sulfuras = new Product("Sulfuras");
+        Product sulfuras = Product.SULFURAS;
         sulfuras.setSellIn(7);
         sulfuras.setQuality(10);
 
@@ -55,7 +55,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void backstagePassQualityShouldIncrease() {
-        Product backstagePass = new Product("Backstage pass");
+        Product backstagePass = Product.BACKSTAGE_PASS;
         backstagePass.setSellIn(15);
         backstagePass.setQuality(10);
 
@@ -65,7 +65,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void backstagePassQualityShouldIncreaseOnDoubleSpeedWhenSellInLessThanOrEqualTo10() {
-        Product backstagePass = new Product("Backstage pass");
+        Product backstagePass = Product.BACKSTAGE_PASS;
         backstagePass.setSellIn(10);
         backstagePass.setQuality(10);
 
@@ -75,7 +75,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void backstagePassQualityShouldIncreaseOnTripleSpeedWhenSellInLessThanOrEqualTo5() {
-        Product backstagePass = new Product("Backstage pass");
+        Product backstagePass = Product.BACKSTAGE_PASS;
         backstagePass.setSellIn(5);
         backstagePass.setQuality(10);
 
@@ -85,7 +85,7 @@ public class ProductControllerTest implements WithAssertions {
 
     @Test
     public void backstagePassQualityShouldBe0WhenSellInLessThanOrEqualTo0() {
-        Product backstagePass = new Product("Backstage pass");
+        Product backstagePass = Product.BACKSTAGE_PASS;
         backstagePass.setSellIn(0);
         backstagePass.setQuality(10);
 
