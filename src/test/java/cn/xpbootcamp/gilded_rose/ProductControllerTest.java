@@ -19,7 +19,7 @@ public class ProductControllerTest implements WithAssertions {
         product.setSellIn(7);
         product.setQuality(10);
 
-        product = productController.decreaseSellInAndQuality(product);
+        product = productController.changeSellInAndQuality(product);
         assertThat(product).matches(p -> p.getSellIn() == 6 && p.getQuality() == 9);
     }
 
@@ -29,7 +29,7 @@ public class ProductControllerTest implements WithAssertions {
         product.setSellIn(0);
         product.setQuality(10);
 
-        product = productController.decreaseSellInAndQuality(product);
+        product = productController.changeSellInAndQuality(product);
         assertThat(product).matches(p -> p.getSellIn() == -1 && p.getQuality() == 8);
     }
 
@@ -39,7 +39,7 @@ public class ProductControllerTest implements WithAssertions {
         agedBrie.setSellIn(7);
         agedBrie.setQuality(10);
 
-        agedBrie = productController.decreaseSellInAndQuality(agedBrie);
+        agedBrie = productController.changeSellInAndQuality(agedBrie);
         assertThat(agedBrie).matches(p -> p.getSellIn() == 6 && p.getQuality() == 11);
     }
 }
