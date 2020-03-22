@@ -42,4 +42,14 @@ public class ProductControllerTest implements WithAssertions {
         agedBrie = productController.changeSellInAndQuality(agedBrie);
         assertThat(agedBrie).matches(p -> p.getSellIn() == 6 && p.getQuality() == 11);
     }
+
+    @Test
+    public void qualityAndSellInShouldNotChangeWhenProductIsSulfuras() {
+        Product sulfuras = new Product("Sulfuras");
+        sulfuras.setSellIn(7);
+        sulfuras.setQuality(10);
+
+        sulfuras = productController.changeSellInAndQuality(sulfuras);
+        assertThat(sulfuras).matches(p -> p.getSellIn() == 7 && p.getQuality() == 10);
+    }
 }
