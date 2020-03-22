@@ -18,8 +18,11 @@ public class ProductController {
             if (sellIn > 10) {
                 quality = quality + rate;
             }
-            else {
+            else if (sellIn > 5){
                 quality = quality + rate * 2;
+            }
+            else {
+                quality = quality + rate * 3;
             }
         }
         else if (sellIn > 0) {
