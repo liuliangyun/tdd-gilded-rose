@@ -13,4 +13,11 @@ public class ProductTest implements WithAssertions {
         assertThat(product.getQuality()).isEqualTo(20);
     }
 
+    @Test
+    public void qualityShouldNotSetWhenLessThan0() {
+        Product product = new Product("mock product");
+        product.setQuality(-1);
+        assertThat(product.getQuality()).isEqualTo(0);
+    }
+
 }
