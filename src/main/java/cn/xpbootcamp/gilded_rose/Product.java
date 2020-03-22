@@ -22,7 +22,7 @@ public class Product {
     }
 
     public void setQuality(int quality) {
-        if (quality >= 0) {
+        if (quality >= 0 && quality <= 50) {
             this.quality = quality;
         }
     }
